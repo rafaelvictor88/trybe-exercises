@@ -1,0 +1,1 @@
+* Diretório para hospedar os exercícios feitos no curso de Web Development da Trybe.
