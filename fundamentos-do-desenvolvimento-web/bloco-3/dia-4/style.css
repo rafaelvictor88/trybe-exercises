@@ -2,6 +2,10 @@ h1 {
   text-align: center;
 }
 
+.section-rank {
+  background-color: khaki;
+}
+
 .section-rank li{
   display: inline-block;
   font-weight: 500;
@@ -13,7 +17,7 @@ h1 {
   height: 50px;
   text-align: center;
   width: 200px;
-  margin-left: 200px;
+  margin-left: 540px;
 }
 
 .second {
@@ -22,6 +26,7 @@ h1 {
   height: 50px;
   text-align: center;
   width: 300px;
+  margin-left: 330px;
 }
 
 .third {
