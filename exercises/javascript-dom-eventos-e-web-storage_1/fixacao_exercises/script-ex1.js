@@ -1,0 +1,1 @@
+document.getElementsByTagName("p")[1].innerText = 'Formado em Desenvolvimento Web pela Trybe e trabalhando na área de tecnologia.';
