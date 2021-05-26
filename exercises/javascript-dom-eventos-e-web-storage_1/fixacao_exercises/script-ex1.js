@@ -2,4 +2,7 @@ document.getElementsByTagName("p")[1].innerText = 'Formado em Desenvolvimento We
 
 document.querySelector(".main-content").style.backgroundColor = 'rgb(76,164,109)';
 
-document.getElementsByClassName("center-content")[0].style.backgroundColor = "white";
+document.querySelector(".main-content .center-content").style.backgroundColor = "white";
+
+document.getElementsByClassName("title")[0].innerText = 'Exercício 5.1 - Java Script';
+
