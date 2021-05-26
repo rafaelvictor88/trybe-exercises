@@ -9,3 +9,7 @@ document.getElementsByClassName("title")[0].innerText = 'Exercício 5.1 - Java S
 for (let i = 0; i < document.getElementsByTagName('p').length; i += 1) {
 document.getElementsByTagName('p')[i].innerText = document.getElementsByTagName('p')[i].innerText.toUpperCase();
 }
+
+for (let i = 0; i < document.getElementsByTagName("p").length; i += 1) {
+console.log(document.getElementsByTagName("p")[i].innerText);
+}
