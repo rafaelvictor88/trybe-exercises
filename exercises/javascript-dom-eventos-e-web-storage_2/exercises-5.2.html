@@ -86,7 +86,20 @@
       leftImg.classList.add('small-image');
       leftImg.setAttribute('src', 'https://picsum.photos/200');
       document.querySelector('.left-content').appendChild(leftImg);
+
+      const rightContentList = document.createElement('ul');
+      document.querySelector('.right-content').appendChild(rightContentList);
+      let contentList = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
       
+      for (let index = 0; index < contentList.length; index += 1) {
+        let rightContentLi = document.createElement('li');
+        rightContentLi.innerHTML = contentList[index];
+        document.querySelector('ul').appendChild(rightContentLi);
+      }
+      
+
+      
+
     </script>
   </body>
 </html>
