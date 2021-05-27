@@ -58,21 +58,34 @@
   <body>
     <script>
       // COLOQUE SEU CÓDIGO AQUI
-      let firstH1 = document.createElement('h1');
-      firstH1.innerHTML = 'Exercícios 5.2 - JavaScript DOM';
-      document.body.appendChild(firstH1);
+      const headerH1 = document.createElement('h1');
+      headerH1.innerHTML = 'Exercícios 5.2 - JavaScript DOM';
+      document.body.appendChild(headerH1);
 
-      let firstDiv = document.createElement('div');
-      firstDiv.classList.add('main-content');
-      document.body.appendChild(firstDiv);
+      const mainContentDiv = document.createElement('div');
+      mainContentDiv.classList.add('main-content');
+      document.body.appendChild(mainContentDiv);
 
-      let secondDiv = document.createElement('div');
-      secondDiv.classList.add('center-content');
-      document.querySelector('.main-content').appendChild(secondDiv);
+      const centerContentDiv = document.createElement('div');
+      centerContentDiv.classList.add('center-content');
+      document.querySelector('.main-content').appendChild(centerContentDiv);
 
-      let firstP = document.createElement('p');
-      firstP.innerHTML = 'Realize os exercícios de forma gradual. Dividindo para conquistar!';
-      document.querySelector('.center-content').appendChild(firstP);
+      const centerContentP = document.createElement('p');
+      centerContentP.innerHTML = 'Realize os exercícios de forma gradual. Dividindo para conquistar!';
+      document.querySelector('.center-content').appendChild(centerContentP);
+
+      const leftContentDiv = document.createElement('Div');
+      leftContentDiv.classList.add('left-content');
+      document.querySelector('.main-content').appendChild(leftContentDiv);
+
+      const rightContentDiv = document.createElement('Div');
+      rightContentDiv.classList.add('right-content');
+      document.querySelector('.main-content').appendChild(rightContentDiv);
+
+      const leftImg = document.createElement('img');
+      leftImg.classList.add('small-image');
+      leftImg.setAttribute('src', 'https://picsum.photos/200');
+      document.querySelector('.left-content').appendChild(leftImg);
       
     </script>
   </body>
