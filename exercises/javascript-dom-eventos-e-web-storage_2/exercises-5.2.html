@@ -109,7 +109,11 @@
 
       rightContentDiv.style.marginRight = 'auto';
 
-      mainContentDiv.style.backgroundColor = 'orange';
+      mainContentDiv.style.backgroundColor = 'green';
+
+      for (let index = rightContentLi.length; index > rightContentLi.length - 2; index += 1) {
+        document.querySelector('.right-content').removeChild(rightContentLi[index]);
+      }
 
     </script>
   </body>
