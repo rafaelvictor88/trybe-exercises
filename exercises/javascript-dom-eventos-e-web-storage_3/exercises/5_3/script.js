@@ -36,4 +36,15 @@ function createDaysOfMonth() {
 };
 
 createDaysOfMonth();
+
+function holiday (feriados) {
+  const buttonsContainer = document.querySelector('.buttons-container');
+  const holidaysBtn = document.createElement('div');
+  holidaysBtn.innerHTML = 'Feriados'; 
+  holidaysBtn.id = 'btn-holiday';
+
+  buttonsContainer.appendChild(holidaysBtn);
+};
+
+holiday();
 // Escreva seu código abaixo.
