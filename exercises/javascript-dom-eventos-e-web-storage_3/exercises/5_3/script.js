@@ -87,6 +87,24 @@ function createFridayButton(buttonName) {
 
 createFridayButton('Friday');
 
+function displayFriday() {
+  let getFridayButton = document.querySelector('#btn-friday');
+  let getFridays = document.getElementsByClassName('friday');
+  let setNewText = 'SEXTOU o/';
+
+  getFridayButton.addEventListener('click', function() {
+    for (let index = 0; index < getFridays.length; index += 1) {
+      if (getFridays[index].innerHTML !== setNewText) {
+          getFridays[index].innerHTML = setNewText;
+      } else {
+          getFridays[index].innerHTML = textFriday[index];
+      }
+    }
+  });
+};
+
+displayFriday();
+
 // function btnClick () {
 //   const button = document.querySelector('#btn-holiday');
 //   const holiDays = document.querySelectorAll('.day-holiday');
