@@ -7,6 +7,10 @@ html {
   padding: 5px;
 }
 
+.main-content p {
+  text-align: justify;
+}
+
 @media screen and (max-width: 600px) {
   .container {
     /* background-color: hotpink; */
@@ -41,6 +45,7 @@ html {
 
   .aside-container {
     display: flex;
+    justify-content: space-around;
   }
 
   button {
@@ -58,4 +63,26 @@ html {
     display: none;
   }
 
+  .main-content h1 {
+    font-size: large;
+    text-align: center;
+  }
+
+  /* .fixed {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 0;
+    font-size: xx-small;
+    text-align: center;
+  } */
+
+  footer h3 {
+    font-size: medium;
+  }
+
+  footer p {
+    font-size: xx-small;
+  }
+  
 }

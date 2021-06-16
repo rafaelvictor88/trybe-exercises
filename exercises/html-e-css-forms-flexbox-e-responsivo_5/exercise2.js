@@ -1,7 +1,7 @@
 let getBtnChap = document.querySelector('.btn-chapters');
 let getBtnInf = document.querySelector('.btn-information');
-// console.log(getBtnInf);
-// console.log(getBtnChap);
+// let getH1Main = document.querySelector('.title-main');
+
 getBtnChap.addEventListener('touchstart', function() {
   let getUlChap = document.querySelector('.ul-chapters');
   if (getUlChap.style.display === 'none') {
@@ -19,3 +19,9 @@ getBtnInf.addEventListener('touchstart', function() {
     getUlInf.style.display = 'none';
   }
 })
+
+// window.onscroll = function() {
+//   getH1Main.className = 'fixed';
+//   // getH1Main.style.position = 'fixed';
+//   // getH1Main.style.marginTop = 0;
+// }
