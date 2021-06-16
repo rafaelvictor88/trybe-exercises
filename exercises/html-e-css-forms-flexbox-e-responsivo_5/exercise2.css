@@ -3,4 +3,59 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  margin: 5px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    /* background-color: hotpink; */
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header p {
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: underline;
+    max-width: 300px;
+  }
+
+  header nav {
+    width: 100%;
+  }
+
+  header nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    /* background-color: indigo; */
+  }
+
+  .aside-container {
+    display: flex;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    border-radius: 5px;
+    max-width: 100px;
+    max-height: 50px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  aside ul {
+    display: none;
+  }
+
 }

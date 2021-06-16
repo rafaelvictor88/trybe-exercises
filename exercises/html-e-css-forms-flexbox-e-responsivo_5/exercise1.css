@@ -36,6 +36,10 @@ figure {
   figure {
     flex-basis: 50%;
   }
+
+  figcaption {
+    text-align: center;
+  }
 }
 
 @media screen and (min-width: 1300px) {
