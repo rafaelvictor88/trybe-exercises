@@ -1,0 +1,52 @@
+body {
+  font-size: large;
+  margin: 20px;
+}
+h1 {
+  font-size: large;
+}
+h2 {
+
+}
+
+img {
+  max-width: 100%;
+  
+}
+
+figure {
+  margin: 25px 0;
+}
+
+@media screen and (min-width: 950px) {
+  body {
+    background-color: greenyellow;
+    font-size: x-large;
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  h2 {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  figure {
+    flex-basis: 50%;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-color: hotpink;
+    font-size: xx-large;
+    margin: 60px;
+    max-width: 80%;
+  }
+}
