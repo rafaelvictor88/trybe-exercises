@@ -1,0 +1,21 @@
+body {
+  max-width: 60%;
+  width: 100%;
+  margin: 40px auto;
+  background-color: darkseagreen;
+}
+
+header, form {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 10px 5px 15px rgb(150, 150, 150);
+  padding: 10px;
+}
+
+.container {
+  margin: 20px 0 20px 0;
+}
+
+button {
+  margin-bottom: 15px;
+}

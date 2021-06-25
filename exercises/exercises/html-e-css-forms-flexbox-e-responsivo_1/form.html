@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <fieldset id="self-data">
+    <div class="line-content">
+      <label for="input-name">Nome:</label>
+      <input type="text" maxlength="40" name="name" id="input-name" required>
+    </div>
+    <div class="line-content">
+      <label for="input-email">E-mail:</label>
+      <input type="email" maxlength="50" name="email" id="input-email" required>
+    </div>
+    <div class="line-content">
+      <label for="input-cpf">CPF:</label>
+      <input type="text" maxlength="11" name="cpf" id="input-cpf" required>
+    </div>
+    <div class="line-content">
+      <label for="input-adress">Endereço:</label>
+      <input type="text" maxlength="200" name="adress" id="input-adress" required>
+    </div>
+    <div class="line-content">
+      <label for="input-city">Cidade:</label>
+      <input type="text" maxlength="28" name="city" id="input-city" required>
+    </div>
+    <div class="line-content" >
+      <label for="input-state">Estado:</label>
+      <select name="state" id="input-state" required></select>
+    </div>
+
+    <div class="line-content">
+      <label for="option-1">Casa</label>
+      <input type="radio" value="casa" name="apt-home" id="option-1" required>
+      <label for="option-2">Apartamento</label>
+      <input type="radio" value="ap" name="apt-home" id="option-2" required>
+    </div>
+  </fieldset>
+  <br>
+  <fieldset id="curriculum-data">
+    <div class="line-content">
+      <label for="resume-area">Resumo do Currículo:</label>
+      <textarea name="resume" id="resume-area" cols="30" rows="10" maxlength="1000" required></textarea>
+    </div>
+    <div class="line-content">
+      <label for="input-office">Cargo:</label>
+      <input type="text" name="office" maxlength="40" id="input-office" required>
+    </div>
+    <div class="line-content">
+      <label for="office-resume">Descrição do cargo:</label>
+      <input type="text" name="description" maxlength="500" id="office-resume" required>
+    </div>
+    <div class="line-content">
+      <legend>Data de Início:</legend>
+      <label for="input-day">Dia</label>
+      <input type="text" name="start-day" placeholder="dd" id="input-day" min="0" max="31" required>
+      <label for="input-month">Mês</label>
+      <input type="text" name="start-month" placeholder="mm" id="input-month" min="0" max="12" required>
+      <label for="input-year">Ano</label>
+      <input type="text" name="start-year" placeholder="aaaa" id="input-year" required>
+    </div>
+  </fieldset>
+  <script src="script.js"></script>
+</body>
+</html>
