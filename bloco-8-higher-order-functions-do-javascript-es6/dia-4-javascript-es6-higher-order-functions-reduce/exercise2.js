@@ -70,7 +70,7 @@ function reduceNames() {
   const stringNames = books
   .reduce((acc, book, index, array) => {
     if (index === array.length - 1)
-    return `${acc} ${book.author.name}.`
+      return `${acc} ${book.author.name}.`
     return `${acc} ${book.author.name},`
   }, '');
   return stringNames.trim();
