@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import App from './App';
 // demais imports...
 import { createStore, combineReducers } from 'redux';
@@ -32,3 +32,24 @@ describe('testing clicks', () => {
     expect(queryByText('5')).toBeInTheDocument();
   });
 });
+
+describe('Testando com meus próprios dedos', () => {
+  it('Testa se o botão existe e funciona', () => {
+    const { queryByText } = renderWithRedux(<App />);
+    const btnAdd = queryByText('Clique aqui');
+
+    expect(btnAdd).toBeInTheDocument();
+    expect(queryByText('0')).toBeInTheDocument();
+    fireEvent.click(btnAdd);
+    expect(queryByText('1')).toBeInTheDocument();
+  })
+
+  it('Testa se o valor inicial do contador é 10 e se modifica ao clicar', () => {
+    const { queryByText } = renderWithRedux(<App />, { initialState: { clickReducer: { counter: 10 }}});
+    const btnAdd = queryByText('Clique aqui');
+
+    expect(queryByText('10')).toBeInTheDocument();
+    fireEvent.click(btnAdd);
+    expect(queryByText('11')).toBeInTheDocument();
+  })
+})
