@@ -1,0 +1,31 @@
+# Comandos Docker referentes a redes (Networks):
+
+> PARA LISTAR AS REDES EXISTENTES;
+- docker network ls
+
+> PARA CRIAR UMA REDE NOVA;
+- docker network create [--driver / -d (especifica o tipo da rede)] [brigde (tipo de rede mais usado)] [nome da minha rede]
+
+> PARA CONECTAR CONECTAR UM CONTAINER JÁ CRIADO;
+- docker network connect minha-rede meu-container
+
+> PARA DESCONECTAR;
+- docker network disconnect minha-rede meu-container
+
+- A flag '--network' pode ser usada para vincular o nosso container a rede existente/criada no momento da criação do mesmo:
+Ex: docker container run \
+    -itd \
+    --network minha-rede \
+     --name meu-container \
+     busybox
+
+OBS:
+- Importante lembrarmos que drivers e networks são objetos diferentes.
+- Uma rede é associada a um ou nenhum driver , as redes padrões que mencionamos acima, possuem o mesmo nome de seu driver, porém não confunda.
+- Por exemplo, a rede bridge possui o driver bridge e, quando ao criarmos nossa própria rede, também utilizamos esse driver, porém não há relação com a rede padrão de nome bridge , no caso não estaremos utilizando ela.
+- Da mesma forma acontece com a rede host , já a rede none não possui um driver e, por isso, ao associarmos um container a ela, ele fica isolado.
+
+# Comandos referentes a Volumes:
+
+> USANDO A TAG "-v";
+- docker run -d --name site-trybe2 -p 8881:80 -v "/home/trybe/meu-site/:/usr/local/apache2/htdocs/" httpd:2.4
