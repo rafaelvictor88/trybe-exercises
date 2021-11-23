@@ -1,0 +1,136 @@
+// Dropando o banco pra resetar os valores;
+use("movies");
+db.movies.drop();
+
+// Inserindo valores para iniciar os exercícios 24.3;
+use("movies");
+db.movies.insertMany([
+  {
+    title: "Batman",
+    category: [
+      "action",
+      "adventure"
+    ],
+    imdbRating: 7.7,
+    budget: 35
+  },
+  {
+    title: "Godzilla",
+    category: [
+      "action",
+      "adventure",
+      "sci-fi"
+    ],
+    imdbRating: 6.6,
+    budget: 10
+  },
+  {
+    title: "Home Alone",
+    category: [
+      "family",
+      "comedy"
+    ],
+    imdbRating: 7.4
+  }
+]);
+
+// Comando para conferir o resultado das querys;
+use("movies");
+db.movies.find();
+
+// ex1:
+use("movies");
+db.movies.find({
+  category: {
+    $all: ["action", "adventure"]
+  }
+});
+
+// ex2:
+use("movies");
+db.movies.find({
+  $and: [
+    { category: "action" },
+    { imdbRating: { $gt: 7 } }
+  ]
+});
+
+// ex3:
+use("movies");
+db.movies.updateOne(
+  { title: "Batman" },
+  {
+    $push: {
+      ratings: {
+        $each: [85, 100, 102, 105]
+      }
+    }
+  }
+);
+
+// ex4:
+use("movies");
+db.movies.updateOne(
+  { title: "Godzilla" },
+  {
+    $push: {
+      ratings: {
+        $each: [78, 52, 95, 10]
+      }
+    }
+  }
+);
+
+// ex5:
+use("movies");
+db.movies.updateOne(
+  { title: "Home Alone" },
+  {
+    $push: {
+      ratings: {
+        $each: [200, 99, 65]
+      }
+    }
+  }
+);
+
+// ex6:
+use("movies");
+db.movies.find(
+  { ratings: { $elemMatch: { $gt: 103 } } },
+  { title: 1, ratings: 1, _id: 0 }
+);
+
+// ex7:
+use("movies");
+db.movies.find(
+  { ratings: { $elemMatch: { $gte: 100, $lte: 105 } } },
+  { title: 1, ratings: 1, _id: 0 }
+);
+
+// ex8:
+use("movies");
+db.movies.find(
+  { ratings: { $elemMatch: { $gte: 64, $lte: 105, $mod: [9, 0] } } },
+  { ratings: 1, title: 1, _id: 0 }
+);
+
+// ex9:
+use("movies");
+db.movies.find(
+  {
+    category: {
+      $all: ["adventure"]
+    },
+    ratings: {
+      $elemMatch: { $gt: 103 }
+    }
+  },
+  { _id: 0, title: 1, ratings: 1, category: 1 }
+);
+
+// ex10:
+use("movies");
+db.movies.find(
+  { category: { $size: 2 } }
+);
