@@ -1,0 +1,25 @@
+// ex1 - Igualdade Simples:
+db.articles.aggregate(
+  [{ $match: { author: "dave" } }],
+);
+
+// ex2 - Igualdade Complexa:
+db.articles.aggregate(
+  [
+    {
+      $match: {
+        $or: [
+          { score: { $gt: 70, $lt: 90 } },
+          { views: { $gte: 1000 } },
+        ],
+      },
+    },
+  ],
+);
+
+// ex - Limit:
+db.articles.aggregate(
+  [
+    { $limit : 5 }
+  ]
+);
