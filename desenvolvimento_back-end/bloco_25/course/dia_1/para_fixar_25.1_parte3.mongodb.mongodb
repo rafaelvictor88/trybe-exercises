@@ -1,0 +1,61 @@
+// Para fixar;
+
+// Populando a coleção clientes;
+use("agg_example");
+db.clients.insertMany([
+  { name: "Dave America", State: "Florida" },
+  { name: "Ned Flanders", State: "Alasca" },
+  { name: "Mark Zuck", State: "Texas" },
+  { name: "Edna Krabappel", State: "Montana" },
+  { name: "Arnold Schuz", State: "California" },
+  { name: "Lisa Simpson", State: "Florida" },
+  { name: "Barney Gumble", State: "Texas" },
+  { name: "Homer Simpson", State: "Florida" },
+]);
+
+// ex1 - Selecione todos os clientes com as suas respectivas transações feitas;
+use("agg_example");
+db.clients.aggregate([
+  {
+    $lookup: {
+      from: "transactions",
+      localField: "name",
+      foreignField: "from",
+      as: "transações",
+    },
+  },
+]);
+
+// ex2 - Selecione quatro clientes com as suas respectivas transações recebidas;
+use("agg_example");
+db.clients.aggregate([
+  {
+    $lookup: {
+      from: "transactions",
+      localField: "name",
+      foreignField: "to",
+      as: "receive_history",
+    },
+  },
+  {
+    $limit: 4,
+  },
+]);
+
+// ex3 - Selecione todos os cliente do estado da "Florida" e suas respectivas transações recebidas.
+use("agg_example");
+db.clients.aggregate([
+  {
+    $match: {
+      State: "Florida",
+    },
+  },
+  {
+    $lookup: {
+      from: "transactions",
+      localField: "name",
+      foreignField: "to",
+      as: "history_transactions",
+    },
+  },
+]);
