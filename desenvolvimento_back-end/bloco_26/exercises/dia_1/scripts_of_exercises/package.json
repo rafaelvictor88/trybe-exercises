@@ -1,0 +1,17 @@
+{
+  "name": "my-scripts",
+  "version": "1.0.0",
+  "description": "exercicios do dia 26.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "velocidade": "node velocidade.js",
+    "sorteio": "node sorteio.js"
+  },
+  "author": "Rafael Victor <rafavictorgs@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
