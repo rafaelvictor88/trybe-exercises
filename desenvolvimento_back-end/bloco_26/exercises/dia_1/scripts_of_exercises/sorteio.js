@@ -1,24 +1,26 @@
 const readline = require('readline-sync');
 
-const numeroJogador = readline.questionInt('Em qual número de 0 a 10 estou pensando? ')
+const respostaJogo = (numero, resposta) => {
+  if(numero !== resposta) return console.log(`Que pena você errou! O número era ${numero}`);
 
-const numeroAleatorio = (numeroJogador) => {
-  const numAleatorio = parseInt(Math.random() * 10);
-
-  const result = numAleatorio !== numeroJogador
-    ? `Opa, não foi dessa vez. O número era ${numAleatorio}.`
-    : "Parabéns, número correto!";
-
-  return result;
+  return console.log("Parabéns, número correto!");
 };
 
-const jogarNovamente = (numeroAleatorio, numeroJogador) => {
-  const resposta = readline.question('Deseja jogar novamente? s/n: ');
+const inicioJogo = () => {
+  const numero = parseInt(Math.random() * 10);
 
-  if (resposta === n) return console.log("Ok! Até a próxima.");
-  if (resposta === s) return numeroAleatorio(numeroJogador);
+  const resposta = readline.questionInt(
+    'Digite um número entre 0 e 10 para saber se é o número que estou pensando: '
+  );
 
+  respostaJogo(numero, resposta);
+
+  const jogarNovamente = readline.question(
+    'Deseja jogar novamente? (Digite s para sim e qualquer outra coisa para não): '
+  );
+  if (jogarNovamente !== 's') return console.log("Ok! Até a próxima.");
+
+  inicioJogo();
 };
 
-console.log(numeroAleatorio(numeroJogador));
-console.log(jogarNovamente());
+inicioJogo();
