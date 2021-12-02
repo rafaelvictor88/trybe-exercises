@@ -8,7 +8,8 @@
     "exec1": "node exercicio1.js",
     "exec2": "node exercicio2.js",
     "exec3": "node exercicio3.js",
-    "exec4": "node exercicio4.js"
+    "exec4": "node exercicio4.js",
+    "exec5": "node exercicio5.js"
   },
   "keywords": [],
   "author": "",
