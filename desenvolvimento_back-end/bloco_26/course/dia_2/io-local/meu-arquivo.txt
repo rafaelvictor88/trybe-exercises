@@ -1,1 +1,1 @@
-Arquivo para ser lido pelo readFyleSync;
+Meu textão
