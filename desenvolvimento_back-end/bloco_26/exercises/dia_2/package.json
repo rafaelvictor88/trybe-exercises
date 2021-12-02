@@ -1,0 +1,16 @@
+{
+  "name": "dia_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "exec1": "node exercicio1.js",
+    "exec2": "node exercicio2.js",
+    "exec3": "node exercicio3.js",
+    "exec4": "node exercicio4.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
