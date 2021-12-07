@@ -9,9 +9,13 @@
     "exec2": "node exercicio2.js",
     "exec3": "node exercicio3.js",
     "exec4": "node exercicio4.js",
-    "exec5": "node exercicio5.js"
+    "exec5": "node exercicio5.js",
+    "exec6": "node exercicio6.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
