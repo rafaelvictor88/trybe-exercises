@@ -1,18 +1,22 @@
 const fs = require('fs').promises;
 
 // Tentativa de fazer de forma dinâmica o Promise.all;
-// const stringArray = ['Finalmente', 'estou', 'usando', 'Promise.all', '!!!'];
-// const createArrayFiles = (stringArray) => {
-//   const promiseArray = [];
-//   for(let i = 0; i < stringArray.length; i++) {
-//     promiseArray.push(`file${i + 1}.txt`);
-//   }
-//   return promiseArray;
-// }
+const createArrayFiles = async () => {
+  const stringArray = ['Finalmente', 'estou', 'usando', 'Promise.all', '!!!'];
+  const promiseArray = [];
+  const fileNames = [];
+  for(let i = 0; i < stringArray.length; i++) {
+    promiseArray.push(fs.writeFile(`./file${i + 1}.txt`, `${stringArray[i]}`, { flag: 'w'}));
+    fileNames.push(`file${i + 1}.txt`);
+  }
+  // console.log(fileNames);
+  await Promise.all(promiseArray);
 
-// Promise.all(
-//   createArrayFiles(stringArray).forEach((item, i) => (
-//     fs.writeFile(`${item[i]}`, stringArray.forEach((sArrayItem, i) => sArrayItem[i]))))
-// ).then((data) => console.log(data));
+  const fileContents = await Promise.all(fileNames.map((file) => fs.readFile(file, 'utf8')));
+  const joinFileContents = fileContents.join(' ');
 
-// console.log(createArrayFiles());
+  await fs.writeFile('./fileAll.txt', joinFileContents);
+
+}
+
+createArrayFiles();
