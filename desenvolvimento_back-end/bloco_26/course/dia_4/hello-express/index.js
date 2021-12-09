@@ -38,8 +38,8 @@ app.get('/recipes/:id', function (req, res) {
 });
 
 app.post('/recipes', function (req, res) {
-  const { id, name, price } = req.body;
-  recipes.push({ id, name, price});
+  const { id, name, price, waitTime } = req.body;
+  recipes.push({ id, name, price, waitTime });
   res.status(201).json({ message: 'Recipe created successfully!'});
 });
 
@@ -73,6 +73,19 @@ app.get('/drinks/:id', function(req, res) {
   if (!drink) return res.status(404).json({ message: 'drink not found' });
 
   res.status(200).json(drink);
+});
+
+app.post('/drinks', function(req, res) {
+  const { id, name, price } = req.body;
+  drinks.push({ id, name, price });
+  res.status(201).json({ message: 'Drink created successfully' });
+});
+
+app.get('/validateToken', function (req, res) {
+  const token = req.headers.authorization;
+  if (token.length !== 16) return res.status(401).json({message: 'Invalid Token!'});
+
+  res.status(200).json({message: 'Valid Token!'})
 });
 
 app.listen(3001, () => {
