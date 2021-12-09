@@ -10,7 +10,8 @@
     "exec3": "node exercicio3.js",
     "exec4": "node exercicio4.js",
     "exec5": "node exercicio5.js",
-    "exec6": "node exercicio6.js"
+    "exec6": "node exercicio6.js",
+    "exec7": "node exercicio7.js"
   },
   "keywords": [],
   "author": "",
