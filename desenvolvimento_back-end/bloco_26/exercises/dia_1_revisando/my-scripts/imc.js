@@ -1,8 +1,11 @@
+// Importa o módulo readline-sync;
 const readline = require('readline-sync');
 
+// Define as variáveis com as perguntas para receber os dados;
 const weight = readline.questionFloat('Qual o seu peso?(kg) ');
 const height = readline.questionFloat('Qual a sua altura?(m) ');
 
+// Função que calcula o IMC;
 const imcCalculator = (weight, height) => {
   const imc = (weight / (height * 2)).toFixed(2);
 
@@ -17,7 +20,7 @@ const imcCalculator = (weight, height) => {
 
   const imcClass = imcClassification(imc);
 
-  return `Seu IMC é ${imc} e ${imcClass}`;
+  return console.log(`Seu IMC é ${imc} e ${imcClass}`);
 }
 
-console.log(imcCalculator(weight, height));
+imcCalculator(weight, height);
