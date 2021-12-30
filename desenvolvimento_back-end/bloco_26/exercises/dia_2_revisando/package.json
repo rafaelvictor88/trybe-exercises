@@ -1,0 +1,13 @@
+{
+  "name": "dia_2_revisando",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ex1": "node ex1.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
